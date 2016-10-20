@@ -1,3 +1,4 @@
+
 %%member function:
 %%finds if X is in list Y.
 member(X,[X|_]).
@@ -29,3 +30,16 @@ max([H|T],M):-
 %%third argument is resultant list
 conc([],B,B).
 conc([H|T],B,[H|W]):-conc(T,B,W).
+
+
+%%Reverse List
+%%Base case:- reverse of empty list is empty list
+rev([],[]).
+rev([H|T],RL):-rev(T,RT),
+	       conc(RT,[H],RL).
+
+%%Palindrome
+%%Base case:- an element is palindrome
+same(X,X).
+palind(X):-rev(X,RX),
+	   same(X,RX).
