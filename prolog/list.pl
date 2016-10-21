@@ -12,7 +12,7 @@ sum([H|T],S):-sum(T,S1),
 
 
 %%Utility function for max function
-%%returns M with maximum value among X & Y 
+%%returns M with maximum value among X & Y
 max2(X,Y,M):-
 	(   X >= Y
 	->  M = X
@@ -43,3 +43,26 @@ rev([H|T],RL):-rev(T,RT),
 same(X,X).
 palind(X):-rev(X,RX),
 	   same(X,RX).
+%%GCD
+gcd(0,Y,Y):-!.
+gcd(X,0,X):-!.
+gcd(X,Y,G):-X1 is X mod Y,
+	gcd(Y,X1,G).
+
+%%Length of list
+len([],0).
+len([_|T],L):-len(T,L1),
+	L is L1 + 1.
+
+
+%%Odd length
+odd(X):-len(X,L),
+	L1 is L mod 2,
+	L1 \== 0.
+
+%%Even length
+even(X):-len(X,L),
+	L1 is L mod 2,
+	L1 == 0.
+
+
