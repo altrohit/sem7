@@ -1,0 +1,13 @@
+Vc=input('Enter the value of Vc = ');
+fc=input('Enter the value of fc = ');
+fm=input('Enter the value of fm = ');
+t=0:0.001:0.5;
+m1=input('Enter the value of m1 = ');
+m2=input('Enter the value of m2 = ');
+m3=input('Enter the value of m3 = ');
+subplot(311);
+plot(Vc*(sin(2*3.14*fc*t)+m1*(sin(2*3.14*fm*t))));
+subplot(312);
+plot(Vc*(sin(2*3.14*fc*t)+m2*(sin(2*3.14*fm*t))));
+subplot(313);
+plot(Vc*(sin(2*3.14*fc*t)+m3*(sin(2*3.14*fm*t))));
